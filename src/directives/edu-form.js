@@ -15,6 +15,7 @@ eduFormDirectives.directive('eduForm', function() {
                 throw new Error('options are required!');
             }
 			$scope.result={};
+			//default buttons form is show
 			$scope.options.formMetaData.buttonsShow=true;
 			$scope.options.formControl={};
 			$scope.internalControl = $scope.options.formControl || {};
