@@ -23,6 +23,6 @@
     "commit": "7454e32280a716c2a915ffd53f18d207b1b11bcf"
   },
   "_source": "git://github.com/educarm/angular-file-upload.git",
-  "_target": "~1.x",
+  "_target": "~1.0.2",
   "_originalSource": "educarm/angular-file-upload"
 }

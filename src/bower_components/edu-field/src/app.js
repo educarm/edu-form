@@ -33,12 +33,14 @@ app.controller('appController', ['$scope','$http', function ($scope,$http) {
      $scope.fields=[
 	                {key: 'oculto',type: 'hidden',value:"campo oculto",name:"nombre",id:"id" },
 					{key: 'literal',type: 'literal',col:'col-md-12',label:'campo literal',text:"*Nota: campo literal para que podamos colocar textos en cualquier parte del formulario",id:"id" },
-					{key: 'button',type: 'button',col:'col-md-3',label:'botón',text:'texto',state:"danger",size:"",disabled:false,onClick:function(){ 
+					{key: 'button',type: 'button',col:'col-md-3',label:'button',state:"danger",size:"",disabled:false,onClick:function(){ 
 																									console.log("botón clickado")
 																								   } },
 					
 					{key: 'iban',type: 'iban',col:'col-md-4',label: 'Nº cuenta cliente',placeholder: 'Texto',autofocus:'',required: true,name:"nombre",id:"id"  },
-					{key: 'nif',type: 'nifniecif',col:'col-md-4',label: 'NIF/NIE',placeholder: 'NIF/NIE',autofocus:'',required: true },
+					{key: 'nif',type: 'nifniecif',col:'col-md-4',label: 'NIF',textbutton:'Nif',placeholder: 'NIF',autofocus:'',required: true },
+					{key: 'nie',type: 'nifniecif',col:'col-md-4',label: 'NIE',textbutton:'Nie',placeholder: 'NIE',autofocus:'',required: true },
+					{key: 'cif',type: 'nifniecif',col:'col-md-4',label: 'CIF',textbutton:'Cif',placeholder: 'CIF',autofocus:'',required: true },
 	                {key: 'texto',type: 'text',default:'texto por defecto',
 						fieldListeners:{
 							onChange:function(value){
@@ -50,10 +52,26 @@ app.controller('appController', ['$scope','$http', function ($scope,$http) {
 							onBlur:function(value){
 								console.log("salida del control:"+value);
 							}
-						},col:'col-md-4',label: 'Texto',placeholder: 'Texto',autofocus:'',required: true },
-					{key: 'upload',type: 'upload',multiple:true,showprogressbar:true,showbuttons:false,url:"/api/v1/upload",col:'col-md-12',label: 'Subida fichero',placeholder: 'Upload',autofocus:'',required: false },
-					{key: 'numero',type: 'number',col:'col-md-4',min:1,max:100000,step:'1',label: 'Número',placeholder: 'Número',autofocus:'',required: true },
-						
+						},col:'col-md-6',label: 'Texto',placeholder: 'Texto',autofocus:'',required: true },
+					{key: 'textobtn',type: 'textbutton',default:'texto por def.',showbutton:true,typebutton:'info',icon:'search',textbutton:'texto',
+						fieldListeners:{
+						    onClick:function(value){
+								console.log("click on button: "+value);
+							},
+							onChange:function(value){
+								console.log("cambio texto:"+value);
+							},
+							onFocus:function(value){
+								console.log("entrada al control:"+value);
+							},
+							onBlur:function(value){
+								console.log("salida del control:"+value);
+							}
+						},col:'col-md-6',label: 'Texto',placeholder: 'Texto',autofocus:'',required: true },
+					{key: 'upload',type: 'upload',multiple:true,showprogressbar:true,showbuttons:false,url:"/api/v1/upload",col:'col-md-12',label: 'Subida fichero',placeholder: 'Upload',autofocus:'' },
+					{key: 'numeroentero',type: 'number',col:'col-md-4',min:1,max:12,pattern:"",label: 'Número entero',placeholder: 'Número entero',autofocus:'',required: true },
+					{key: 'numerodecimal',type: 'number',col:'col-md-4',min:1,max:12,pattern:"/^-?[0-9]+([,\.][0-9]*)?$/",label: 'Número decimal',placeholder: 'Número decimal',autofocus:'',required: true },
+					
 					{key: 'email',type: 'email',col:'col-md-4',label: 'Email',placeholder: 'Email',autofocus:'',required: true },
 					{key: 'url',type: 'url',col:'col-md-4',label: 'Url',placeholder: 'Url',autofocus:'',required: true },
 					{key: 'password',type: 'password',col:'col-md-4',label: 'Password',placeholder: 'Password',autofocus:'',required: true },

@@ -1,4 +1,4 @@
-<div class="radio-group  {{options.col}}" ng-class="{'has-error':  $invalid, 'has-success': !$invalid && $dirty}">
+<div class="radio-group  {{options.col}}" ng-class="{'has-error':  $invalid, 'has-success': !$invalid && $dirty}" style="position:relative">
 	<label class="control-label">
 		{{options.label}}
 		{{options.required ? '*' : ''}}
@@ -18,7 +18,7 @@
 			{{option.name}}
 		</label>
 	</div>
-	<div class="help-block has-error" ng-show="$invalid">
+	<div class="help-block has-error" ng-show="$invalid"  style="position:absolute;top:50px">
 		<small class="error" ng-show="$invalidRequired">Campo obligatorio. Introduzca un valor. </small>
 	</div>
 </div>

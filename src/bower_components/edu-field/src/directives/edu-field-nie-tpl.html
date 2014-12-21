@@ -8,9 +8,8 @@
 		<span class="input-group-btn">
 			<button class="btn btn-default" type="button">{{options.textbutton}}</button>
 		</span>
-		
+		<div class="input-group">
 			<input type="text" style="min-width:250px" 
-			       
 					class="form-control" 
 					id="{{id}}"
 					name="{{name}}"
@@ -26,13 +25,13 @@
 					ng-blur="onBlur()"
 					ng-focus="onFocus()"
 					ng-change="onChange()">
-			
+		</div>		
 	</div>
 
-		<div class="help-block has-error" ng-show="$invalid" style="position:absolute;top:50px">
-			<small class="error" ng-show="$invalidRequired">Campo obligatorio. Introduzca un {{options.textbutton|| 'Número de documento'}}</small>
+		<div class="help-block has-error" ng-show="$invalid"  style="position:absolute;top:50px">
+			<small class="error" ng-show="$invalidRequired">Campo obligatorio. Introduzca un NIE</small>
 			<small class="error" ng-show="$invalidMinlength">Debe tener al menos {{options.min}} caracteres</small>
 			<small class="error" ng-show="$invalidMaxlength">No puede tener más de {{options.max}} caracteres</small>
-			<small class="error" ng-show="$invalidPattern">Introduzca un {{options.textbutton|| 'Número de documento'}} válido</small>
+			<small class="error" ng-show="$invalidPattern">Introduzca un NIF/NIE válido</small>
 		</div>
 </div>

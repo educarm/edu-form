@@ -1,9 +1,9 @@
-<div class="form-group  {{options.col}}"   ng-class="{'has-error':  $invalid, 'has-success': !$invalid && $dirty}">
+<div class="form-group  {{options.col}}"   ng-class="{'has-error':  $invalid, 'has-success': !$invalid && $dirty}" style="position:relative">
 	<label for="{{id}}">
-		{{options.label || 'Fecha'}}
+		{{options.label}}
 		{{options.required ? '*' : ''}}
 	</label>
-	<input date-input
+	<input type="date"
 			class="form-control"
 			id="{{id}}"
 			name="{{name}}"
@@ -15,7 +15,7 @@
 			ng-change="onChange()"
 			ng-required="{{options.required}}"
 			ng-disabled="{{options.disabled}}">
-	<div class="help-block has-error" ng-show="$invalid">
+	<div class="help-block has-error" ng-show="$invalid"  style="position:absolute;top:50px">
 		<small class="error" ng-show="$invalidRequired">Campo obligatorio. Introduzca una fecha</small>
 		<small class="error" ng-show="$invalidPattern">Introduzca un fecha válida (dd-mm-aaaa)</small>
 	</div>	   

@@ -1,6 +1,6 @@
-<div class="form-group   {{options.col}}" ng-class="{'has-error':  $invalid, 'has-success': !$invalid && $dirty}">
+<div class="form-group   {{options.col}}" ng-class="{'has-error':  $invalid, 'has-success': !$invalid && $dirty}" style="position:relative">
 	<label for="{{id}}">
-		{{options.label || 'IBAN'}}
+		{{options.label}}
 		{{options.required ? '*' : ''}}
 	</label>
 	
@@ -8,7 +8,7 @@
 		<span class="input-group-btn">
 			<button class="btn btn-default" type="button">IBAN</button>
 		</span>
-		<div class="input-group">
+		
 			<input type="text" style="width:250px" 
 					class="form-control" 
 					id="{{id}}"
@@ -26,11 +26,11 @@
 					ng-focus="onFocus()"
 					ng-change="onChange()">
 					
-		</div>
+		
 				
 	</div>
 
-		<div class="help-block has-error" ng-show="$invalid">
+		<div class="help-block has-error" ng-show="$invalid"  style="position:absolute;top:50px">
 			<small class="error" ng-show="$invalidRequired">Campo obligatorio. Introduzca un IBAN</small>
 			<small class="error" ng-show="$invalidMinlength">Debe tener al menos {{options.min}} caracteres</small>
 			<small class="error" ng-show="$invalidMaxlength">No puede tener más de {{options.max}} caracteres</small>

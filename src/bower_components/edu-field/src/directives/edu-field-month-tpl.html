@@ -1,6 +1,6 @@
-<div class="form-group {{options.col}}" ng-class="{'has-error':  $invalid, 'has-success': !$invalid && $dirty}">
+<div class="form-group {{options.col}}" ng-class="{'has-error':  $invalid, 'has-success': !$invalid && $dirty}" style="position:relative">
 	<label for="{{id}}">
-		{{options.label || 'Number'}}
+		{{options.label}}
 		{{options.required ? '*' : ''}}
 	</label>
 	<input type="month"
@@ -17,7 +17,7 @@
 			ng-blur="onBlur()"
 			ng-focus="onFocus()"
 			ng-change="onChange()">
-	<div class="help-block has-error" ng-show="$invalid">
+	<div class="help-block has-error" ng-show="$invalid"  style="position:absolute;top:50px">
 		<small class="error" ng-show="$invalidRequired">Campo obligatorio. Introduzca un mes</small>
 		<small class="error" ng-show="$invalidPattern">Introduzca un mes válido</small>
 	</div>

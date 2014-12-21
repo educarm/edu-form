@@ -32,6 +32,6 @@
     "commit": "47d0a139ae8f6d273c0180b6149786b155d28079"
   },
   "_source": "git://github.com/educarm/jquery.git",
-  "_target": "~2.x",
+  "_target": "~2.1.1",
   "_originalSource": "educarm/jquery"
 }

@@ -3,7 +3,13 @@
 		{{options.label}}
 		{{options.required ? '*' : ''}}
 	</label>
-	
+	<div class="input-group">
+		<span class="input-group-btn"">
+		    <a ng-click="onClick()" class="btn btn-{{options.typebutton||'default'}}">
+			  <i class="fa fa-{{options.icon}}"></i>
+			 {{options.textbutton}}
+			</a>
+		</span>
 		
 			<input type="text"
 			   class="form-control"
@@ -20,7 +26,8 @@
 			   ng-blur="onBlur()"
 			   ng-focus="onFocus()"
 			   ng-change="onChange()">
-
+		
+	</div>
 		   
 	<div class="help-block has-error" ng-show="$invalid"  style="position:absolute;top:50px">
 		<small class="error" ng-show="$invalidRequired">Campo obligatorio. Introduzca un valor</small>

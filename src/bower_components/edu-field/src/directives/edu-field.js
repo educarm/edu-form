@@ -57,6 +57,9 @@ eduFieldDirectives.directive('eduField', function formField($http, $compile, $te
 		var templateUrl = '';
 
 		switch(type) {
+		    case 'textbutton':
+				templateUrl = 'directives/edu-field-textbutton-tpl.html';
+				break;
 			case 'button':
 				templateUrl = 'directives/edu-field-button-tpl.html';
 				break;
@@ -69,7 +72,7 @@ eduFieldDirectives.directive('eduField', function formField($http, $compile, $te
 			case 'upload':
 				templateUrl = 'directives/edu-field-upload-tpl.html';
 				break;
-		   case 'nifniecif':
+		    case 'nifniecif':
 				templateUrl = 'directives/edu-field-nifniecif-tpl.html';
 				break;
 			case 'iban':
@@ -183,8 +186,11 @@ eduFieldDirectives.directive('eduField', function formField($http, $compile, $te
 			// ---
 			// CALLBACKS
 			// ---
-			
-			
+			$scope.onClick=function() {
+				if ($scope.options.hasOwnProperty('fieldListeners') && typeof $scope.options.fieldListeners.onClick == 'function'){
+					$scope.options.fieldListeners.onClick($scope.value);
+				}
+			}
 			$scope.onChange=function() {
 				if ($scope.options.hasOwnProperty('fieldListeners') && typeof $scope.options.fieldListeners.onChange == 'function'){
 					$scope.options.fieldListeners.onChange($scope.value);
@@ -281,7 +287,7 @@ eduFieldDirectives.directive('eduField', function formField($http, $compile, $te
 			})();
 			
 			// ---
-			// CONTROL TYPE= nif
+			// CONTROL TYPE= nif nie cif
 		    // ---
 		    $scope.nifniecifValidator = (function() {
 				return {
@@ -293,6 +299,7 @@ eduFieldDirectives.directive('eduField', function formField($http, $compile, $te
 					}
 				};
 			})();
+
 			
 			// ---
 			// CONTROL TYPE= ss

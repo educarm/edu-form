@@ -52,18 +52,30 @@ module.exports = function(grunt) {
 		concat: {
 			build: {
 				// specifing files so that they are added in this order
-				src: ['.tmp/modules/*.js', '.tmp/directives/*.js', '.tmp/*.js'],
+				options: {
+					banner:'/*\n'+
+						   ' <%=pkg.name %> v<%=pkg.version%>\n'+
+						   ' (c) Educarm, http://www.educarm.es\n'+
+						   ' License: MIT\n'+
+						   '*/\n'
+				},
+				src: ['.tmp/modules/*.js', '.tmp/directives/*.js', '.tmp/*.js', '.tmp/js/*.js'],
 				dest: '.tmp/<%=pkg.name %>.js'
 			}
 		},
 		uglify: {
-			build: {
+			 build: {
+			    options: {
+					banner:'/*\n'+
+						   ' <%=pkg.name %> v<%=pkg.version%>\n'+
+						   ' (c) Educarm, http://www.educarm.es\n'+
+						   ' License: MIT\n'+
+						   '*/\n',
+				    mangle: true,
+				    sourceMap: true
+				},
 				src: '.tmp/<%=pkg.name %>.js',
 				dest: '.tmp/<%=pkg.name %>.min.js'
-			},
-			options: {
-				mangle: true,
-				sourceMap: true
 			}
 		},
 		cssmin: {

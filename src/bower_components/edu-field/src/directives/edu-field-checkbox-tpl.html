@@ -1,4 +1,4 @@
-<div class="checkbox  {{options.col}}" ng-class="{'has-error':  $invalid, 'has-success': !$invalid && $dirty}"><!--ng-required="{{options.required}}"-->
+<div class="checkbox  {{options.col}}" ng-class="{'has-error':  $invalid, 'has-success': !$invalid && $dirty}" style="position:relative"><!--ng-required="{{options.required}}"-->
 	<label>
 		<input type="checkbox"
 			id="{{id}}"
@@ -11,11 +11,11 @@
 			ng-blur="onBlur()"
 			ng-focus="onFocus()"
 			ng-change="onChange()">
-			{{options.label || 'Checkbox'}}
+			{{options.label}}
 			{{options.required ? '*' : ''}}
 	</label>
 	
-	<div class="help-block has-error" ng-show="$invalid">
+	<div class="help-block has-error" ng-show="$invalid"  style="position:absolute;top:50px">
 		<small class="error" ng-show="$invalidRequired">Campo obligatorio. Introduzca un valor</small>
 	</div>
 </div>

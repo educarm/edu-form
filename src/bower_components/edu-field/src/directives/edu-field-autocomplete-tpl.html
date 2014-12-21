@@ -1,6 +1,6 @@
-<div class="form-group  {{options.col}}" ng-class="{'has-error':  $invalid, 'has-success': !$invalid && $dirty}">
+<div class="form-group  {{options.col}}" ng-class="{'has-error':  $invalid, 'has-success': !$invalid && $dirty}" style="position:relative">
 	<label for="{{id}}">
-		{{options.label || 'Autocomplete'}}
+		{{options.label}}
 		{{options.required ? '*' : ''}}
 	</label>
 	
@@ -26,7 +26,7 @@
 			 minlength="{{options.autocminlength}}"
              inputclass="form-control form-control-small"/>
 			  
-			 <div class="help-block has-error" ng-show="$invalid">
+			 <div class="help-block has-error" ng-show="$invalid" style="position:absolute;top:50px">
 				<small class="error" ng-show="$invalidRequired">Campo obligatorio. Introduzca un valor</small>
 				<small class="error" ng-show="$invalidMinlength">Debe tener al menos {{options.min}} caracteres</small>
 				<small class="error" ng-show="$invalidMaxlength">No puede tener más de {{options.max}} caracteres</small>

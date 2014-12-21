@@ -70,6 +70,7 @@ app.controller('appController', ['$scope','$http', function ($scope,$http) {
 		              tabsShow:true,
 					  buttonsShow:true,
 					  headerShow:true,
+					  panelType:"info",
 					  footerShow:true,
 					  fieldSetShow:true,
 		              name:"myFormName",

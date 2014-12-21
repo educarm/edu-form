@@ -37,6 +37,6 @@
     "commit": "f1621497eab40e553e4e260ffc8324db0ff05303"
   },
   "_source": "git://github.com/educarm/textAngular.git",
-  "_target": "~1.x",
+  "_target": "~1.2.2",
   "_originalSource": "educarm/textAngular"
 }

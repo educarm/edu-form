@@ -18,6 +18,6 @@
     "commit": "1e49eb9cb06fcb110a017b6df853fb458e413d73"
   },
   "_source": "git://github.com/educarm/bootstrap.git",
-  "_target": "~3.x",
+  "_target": "~3.2.0",
   "_originalSource": "educarm/bootstrap"
 }

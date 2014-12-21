@@ -1,15 +1,15 @@
-<div class="form-group   {{options.col}}" ng-class="{'has-error':  $invalid, 'has-success': !$invalid && $dirty}">
+<div class="form-group   {{options.col}}" ng-class="{'has-error':  $invalid, 'has-success': !$invalid && $dirty}" style="position:relative">
 	<label for="{{id}}">
-		{{options.label || 'NIF/NIE'}}
+		{{options.label}}
 		{{options.required ? '*' : ''}}
 	</label>
 	
 	<div class="input-group">
 		<span class="input-group-btn">
-			<button class="btn btn-default" type="button">NIF/NIE</button>
+			<button class="btn btn-default" type="button">NIF</button>
 		</span>
 		<div class="input-group">
-			<input type="text" style="width:250px" 
+			<input type="text" style="min-width:250px" 
 					class="form-control" 
 					id="{{id}}"
 					name="{{name}}"
@@ -18,9 +18,9 @@
 					autofocus="{{options.autofocus}}"
 					ng-required="{{options.required}}"
 					ng-disabled="{{options.disabled}}"
-					ng-pattern="nifniecifValidator"
 					ng-minlength="{{options.min}}"
 					ng-maxlength="{{options.max}}"
+					ng-pattern="nifniecifValidator('nif')"
 					ng-model="value"
 					ng-blur="onBlur()"
 					ng-focus="onFocus()"
@@ -30,8 +30,8 @@
 				
 	</div>
 
-		<div class="help-block has-error" ng-show="$invalid">
-			<small class="error" ng-show="$invalidRequired">Campo obligatorio. Introduzca un NIF/NIE</small>
+		<div class="help-block has-error" ng-show="$invalid"  style="position:absolute;top:50px">
+			<small class="error" ng-show="$invalidRequired">Campo obligatorio. Introduzca un NIF</small>
 			<small class="error" ng-show="$invalidMinlength">Debe tener al menos {{options.min}} caracteres</small>
 			<small class="error" ng-show="$invalidMaxlength">No puede tener más de {{options.max}} caracteres</small>
 			<small class="error" ng-show="$invalidPattern">Introduzca un NIF/NIE válido</small>
