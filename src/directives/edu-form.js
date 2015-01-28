@@ -16,12 +16,13 @@ eduFormDirectives.directive('eduForm', function() {
             }
 			$scope.result={};
 			//default options
-			$scope.options.formMetaData.buttonsShow=true;
-			$scope.options.formMetaData.tabsShow=true;
-		    $scope.options.formMetaData.buttonsShow=true;
-		    $scope.options.formMetaData.headerShow=true;
-		    $scope.options.formMetaData.footerShow=true;
-		    $scope.options.formMetaData.fieldSetShow=true;
+			
+			$scope.options.formMetaData.buttonsShow=(typeof $scope.options.formMetaData.buttonsShow==='undefined'?true:$scope.options.formMetaData.buttonsShow);
+			$scope.options.formMetaData.tabsShow=(typeof $scope.options.formMetaData.tabsShow==='undefined'?true:$scope.options.formMetaData.tabsShow);
+			$scope.options.formMetaData.headerShow=(typeof $scope.options.formMetaData.headerShow==='undefined'?true:$scope.options.formMetaData.headerShow);
+			$scope.options.formMetaData.footerShow=(typeof $scope.options.formMetaData.footerShow==='undefined'?true:$scope.options.formMetaData.footerShow);
+			$scope.options.formMetaData.fieldSetShow=(typeof $scope.options.formMetaData.fieldSetShow==='undefined'?true:$scope.options.formMetaData.fieldSetShow);
+
 			
 			$scope.options.formControl={};
 			$scope.internalControl = $scope.options.formControl || {};
