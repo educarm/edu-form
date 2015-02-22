@@ -70,6 +70,7 @@ app.controller('appController', ['$scope','$http', function ($scope,$http) {
 		              tabsShow:false,
 					  buttonsShow:true,
 					  headerShow:true,
+					  inputsSize:'lg',
 					  panelType:"info",
 					  footerShow:true,
 					  fieldSetShow:true,
@@ -78,7 +79,7 @@ app.controller('appController', ['$scope','$http', function ($scope,$http) {
 		},
 		formFields:{  
 		              tabs:[ 
-					         { tabname:"kjhkjhj",
+					         { tabname:"tab1",
 							  active:true,
 							  fieldSets:[
 										{
@@ -86,8 +87,8 @@ app.controller('appController', ['$scope','$http', function ($scope,$http) {
 										   fields:[	  
 													{key: 'oculto',type: 'hidden',value:"campo oculto",name:"nombre",id:"id" },
 													{key: 'upload',type: 'upload',multiple:true,url:"/api/v1/upload",col:'col-md-12',label: 'Subida fichero',placeholder: 'Upload',autofocus:'',required: false },
-													{key: 'texto',type: 'text',col:'col-md-4',label: 'Texto',placeholder: 'Texto',autofocus:'',required: true },
-													{key: 'numero',type: 'number',col:'col-md-4',label: 'Número',placeholder: 'Número',autofocus:'',required: true },
+													{key: 'texto',type: 'text',inputSize:'sm',col:'col-md-4',label: 'Texto',placeholder: 'Texto',autofocus:'',required: true },
+													{key: 'numero',type: 'number',inputSize:'sm',col:'col-md-4',label: 'Número',placeholder: 'Número',autofocus:'',required: true },
 													{key: 'email',type: 'email',col:'col-md-4',label: 'Email',placeholder: 'Email',autofocus:'',required: true },
 													{key: 'url',type: 'url',col:'col-md-4',label: 'Url',placeholder: 'Url',autofocus:'',required: true },
 													{key: 'password',type: 'password',col:'col-md-4',label: 'Password',placeholder: 'Password',autofocus:'',required: true },	 
@@ -100,6 +101,7 @@ app.controller('appController', ['$scope','$http', function ($scope,$http) {
 													{key: 'ckeckbox',type: 'checkbox',col:'col-md-4',label: 'Checkbox',placeholder: 'Checkbox',autofocus:'',disabled:false,required: true },
 													{key: 'radio',type: 'radio',col:'col-md-4',label: 'Radio',options:[{"name":"perro","value":"1"},{"name":"gato","value":"2"}],placeholder: 'Checkbox',autofocus:'',required: true },
 													{key: 'rango',type: 'range',col:'col-md-4',label: 'Slider',min:100,max:500,placeholder: 'Slider',autofocus:'',required: true },
+													{key: 'password2',type: 'password',col:'col-md-4',label: 'Password',placeholder: 'Password',autofocus:'',required: true }	 
 													  
 											]
 										}

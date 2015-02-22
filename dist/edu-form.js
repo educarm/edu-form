@@ -1,5 +1,5 @@
 /*
- edu-form v0.0.4
+ edu-form v0.0.5
  (c) Educarm, http://www.educarm.es
  License: MIT
 */
@@ -45,6 +45,17 @@ eduFormDirectives.directive('eduForm', function () {
         $scope.options.formMetaData.headerShow = typeof $scope.options.formMetaData.headerShow === 'undefined' ? true : $scope.options.formMetaData.headerShow;
         $scope.options.formMetaData.footerShow = typeof $scope.options.formMetaData.footerShow === 'undefined' ? true : $scope.options.formMetaData.footerShow;
         $scope.options.formMetaData.fieldSetShow = typeof $scope.options.formMetaData.fieldSetShow === 'undefined' ? true : $scope.options.formMetaData.fieldSetShow;
+        if ($scope.options.formMetaData.hasOwnProperty('inputsSize')) {
+          for (var i = 0; i < $scope.options.formFields.tabs.length; i++) {
+            for (var j = 0; j < $scope.options.formFields.tabs[i].fieldSets.length; j++) {
+              for (var k = 0; k < $scope.options.formFields.tabs[i].fieldSets[j].fields.length; k++) {
+                if (!$scope.options.formFields.tabs[i].fieldSets[j].fields[k].hasOwnProperty('inputSize') || !$scope.options.formFields.tabs[i].fieldSets[j].fields[k].hasOwnProperty('inputSize') && $scope.options.formFields.tabs[i].fieldSets[j].fields[k].fieldSize == '') {
+                  $scope.options.formFields.tabs[i].fieldSets[j].fields[k].inputSize = $scope.options.formMetaData.inputsSize;
+                }
+              }
+            }
+          }
+        }
         $scope.options.formControl = {};
         $scope.internalControl = $scope.options.formControl || {};
         //methods  
