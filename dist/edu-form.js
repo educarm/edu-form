@@ -1,5 +1,5 @@
 /*
- edu-form v0.0.5
+ edu-form v0.0.6
  (c) Educarm, http://www.educarm.es
  License: MIT
 */
