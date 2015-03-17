@@ -39,6 +39,13 @@ eduFormDirectives.directive('eduForm', function () {
           throw new Error('options are required!');
         }
         $scope.result = {};
+        $scope.$watchCollection('result', function (newValue, oldValue) {
+          if (newValue !== oldValue) {
+            if ($scope.options.formListeners.onchange === undefined)
+              return;
+            $scope.options.formListeners.onchange($scope.result);
+          }
+        });
         //default options
         $scope.options.formMetaData.buttonsShow = typeof $scope.options.formMetaData.buttonsShow === 'undefined' ? true : $scope.options.formMetaData.buttonsShow;
         $scope.options.formMetaData.tabsShow = typeof $scope.options.formMetaData.tabsShow === 'undefined' ? true : $scope.options.formMetaData.tabsShow;

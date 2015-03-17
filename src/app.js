@@ -63,6 +63,10 @@ app.controller('appController', ['$scope','$http', function ($scope,$http) {
                     oncancel: function () {
                         console.log('form oncancel()');
 						
+                    },
+                    onchange: function (result) {
+                        console.log('form onchange()'+angular.toJson(result));
+						
                     }
                 },
 		
