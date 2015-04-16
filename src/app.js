@@ -91,7 +91,7 @@ app.controller('appController', ['$scope','$http', function ($scope,$http) {
 										   fields:[	  
 													{key: 'oculto',type: 'hidden',value:"campo oculto",name:"nombre",id:"id" },
 													{key: 'upload',type: 'upload',multiple:true,url:"/api/v1/upload",col:'col-md-12',label: 'Subida fichero',placeholder: 'Upload',autofocus:'',required: false },
-													{key: 'texto',type: 'text',inputSize:'sm',col:'col-md-4',label: 'Texto',placeholder: 'Texto',autofocus:'',required: true },
+													{key: 'texto',type: 'text',inputSize:'sm',col:'col-md-12',label: 'Texto',placeholder: 'Texto',autofocus:'',required: true },
 													{key: 'numero',type: 'number',inputSize:'sm',col:'col-md-4',label: 'Número',placeholder: 'Número',autofocus:'',required: true },
 													{key: 'email',type: 'email',col:'col-md-4',label: 'Email',placeholder: 'Email',autofocus:'',required: true },
 													{key: 'url',type: 'url',col:'col-md-4',label: 'Url',placeholder: 'Url',autofocus:'',required: true },
