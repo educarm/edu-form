@@ -22,6 +22,12 @@ eduFormDirectives.directive('eduForm', function() {
 				   }
 			});
 			
+			$scope.$watchCollection('formFields', function(newValue, oldValue) {
+				if ( newValue!== oldValue ) {
+					console.log("change formfield:"+angular.toJson(newValue));
+				}
+			});
+			
 			//default options
 			$scope.options.formMetaData.buttonsShow=(typeof $scope.options.formMetaData.buttonsShow==='undefined'?true:$scope.options.formMetaData.buttonsShow);
 			$scope.options.formMetaData.tabsShow=(typeof $scope.options.formMetaData.tabsShow==='undefined'?true:$scope.options.formMetaData.tabsShow);

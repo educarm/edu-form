@@ -45,7 +45,7 @@
 					<div class="well form-actions " ng-show="options.formMetaData.buttonsShow " style="text-align: right"> 
 						
 							
-									<button ng-click="save()"  ng-disabled="{{options.formMetaData.name+'.$invalid'}}" class="btn btn-primary">{{options.snippets.formButtonContinue||'Continuar'}}</button> 
+									<button  ng-if="!options.formMetaData.showButtonSave"  ng-click="save()"  ng-disabled="{{options.formMetaData.name+'.$invalid'}}" class="btn btn-primary">{{options.snippets.formButtonContinue||'Continuar'}}</button> 
 									<button ng-click="cancel()" class="btn">{{options.snippets.formButtonCancel||'Cancelar'}}</button>
 										
 					</div> 
