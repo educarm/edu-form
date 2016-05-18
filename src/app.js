@@ -87,7 +87,8 @@ app.controller('appController', ['$scope','$http', function ($scope,$http) {
 					  footerShow:true,
 					  fieldSetShow:true,
 		              name:"myFormName",
-					  id:"myFormId"
+					  id:"myFormId",
+					  showButtonSave:false
 		},
 		formFields:{  
 		              tabs:[ 

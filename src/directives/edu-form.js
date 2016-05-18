@@ -35,6 +35,8 @@ eduFormDirectives.directive('eduForm', function() {
 			$scope.options.formMetaData.footerShow=(typeof $scope.options.formMetaData.footerShow==='undefined'?true:$scope.options.formMetaData.footerShow);
 			$scope.options.formMetaData.fieldSetShow=(typeof $scope.options.formMetaData.fieldSetShow==='undefined'?true:$scope.options.formMetaData.fieldSetShow);
 			
+			$scope.options.formMetaData.showButtonSave=(typeof $scope.options.formMetaData.showButtonSave==='undefined'?true:$scope.options.formMetaData.showButtonSave);
+			
 			if($scope.options.formMetaData.hasOwnProperty("inputsSize")){
 				for(var i=0;i<$scope.options.formFields.tabs.length;i++){
 					for(var j=0;j<$scope.options.formFields.tabs[i].fieldSets.length;j++){
