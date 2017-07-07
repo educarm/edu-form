@@ -66,10 +66,14 @@ app.controller('appController', ['$scope','$http', function ($scope,$http) {
        formListeners: {
                     onsave: function (data) {
                         console.log('form onsave()'+angular.toJson(data));
+						console.log('result object:'+$scope.formData);
+						$scope.formData['texto']='kk';
+						
 						
                     },
                     oncancel: function () {
                         console.log('form oncancel()');
+						$scope.options2.formData['texto']='kki';
 						
                     },
                     onchange: function (result) {
