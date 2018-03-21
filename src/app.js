@@ -102,12 +102,26 @@ app.controller('appController', ['$scope','$http', function ($scope,$http) {
 										{
 										   fieldSetName:"fieldname1",
 										   fields:[	  
-													
-													{key: 'texto',type: 'text',inputSize:'sm',col:'col-md-8',label: 'Texto',placeholder: 'Texto',autofocus:'',required: true },
+													//row one
+													{key: 'selectlocal',type: 'select',inputSize:'md',col:'col-md-4',label: 'Select datos locales',selecttypesource:'array',selectsource: $scope.municipios,optionname:"name",optionvalue:"value",selectconcatvaluename:true},
 													{key: 'ckeckbox',type: 'checkbox',inputSizeClass:"input-lg",col:'col-md-4',label: 'Checkbox',placeholder: 'Checkbox',autofocus:'',disabled:false,required: true,default:'N' },
-					
+													{key: 'ckeckbox',type: 'checkbox',inputSizeClass:"input-lg",col:'col-md-4',label: 'Checkbox',placeholder: 'Checkbox',autofocus:'',disabled:false,required: true,default:'N' },
+													
+													//row two
+													{key: 'ckeckbox',type: 'checkbox',inputSize:'md',inputSizeClass:"input-lg",col:'col-md-4',label: 'Checkbox',placeholder: 'Checkbox',autofocus:'',disabled:false,required: true,default:'N' },
+													{key: 'texto',type: 'text',inputSize:'md',col:'col-md-8',label: 'Texto',placeholder: 'Texto',autofocus:'',required: true },
+													
+													//row three
+													{key: 'texto',type: 'text',inputSize:'md',col:'col-md-4',label: 'Texto',placeholder: 'Texto',autofocus:'',required: true },
+													{key: 'texto',type: 'text',inputSize:'md',col:'col-md-4',label: 'Texto',placeholder: 'Texto',autofocus:'',required: true },
+													{key: 'texto',type: 'text',inputSize:'md',col:'col-md-4',label: 'Texto',placeholder: 'Texto',autofocus:'',required: true },
+													
+													
+													//row four
 													{key: 'texto2',type: 'text',inputSize:'sm',col:'col-md-12',label: 'Texto',placeholder: 'Texto',autofocus:'',required: true },
-                                                    {key: 'FECHA_ESTADO',type: 'date',col:'col-md-1', label: 'Fecha Estado',placeholder: '',autofocus:'autofocus',required:false, disabled:true}													
+                                                    
+													//row five
+													{key: 'FECHA_ESTADO',type: 'date',col:'col-md-12', label: 'Fecha Estado',placeholder: '',autofocus:'autofocus',required:false, disabled:true}													
 											]
 										}
 									]
