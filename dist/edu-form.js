@@ -1,5 +1,5 @@
 /*
- edu-form v0.0.12
+ edu-form v0.0.13
  (c) Educarm, http://www.educarm.es
  License: MIT
 */
@@ -46,10 +46,7 @@ eduFormDirectives.directive('eduForm', function () {
             $scope.options.formListeners.onchange($scope.result);
           }
         });
-        $scope.$watchCollection('formFields', function (newValue, oldValue) {
-          if (newValue !== oldValue) {
-            console.log('change formfield:' + angular.toJson(newValue));
-          }
+        $scope.$watchCollection('options.formFields', function (newValue, oldValue) {
         });
         $scope.options.formData = $scope.result;
         //default options
