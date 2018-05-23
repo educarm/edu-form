@@ -72,6 +72,18 @@ eduFormDirectives.directive('eduForm', function() {
 				}
 			}
 			
+			$scope.internalControl.showTab = function(indexTab) {
+				if($scope.options.formFields.hasOwnProperty('tabs')){
+					$scope.options.formFields.tabs[indexTab].show = true;
+				} 
+			}
+			
+			$scope.internalControl.hideTab = function(indexTab) {
+				if($scope.options.formFields.hasOwnProperty('tabs')){
+					$scope.options.formFields.tabs[indexTab].show = false;
+				} 
+			}
+			
 			$scope.internalControl.showOverlayLoading = function(bShow) {
 				$scope.options.showOverlayLoadingForm=bShow;  
 			}

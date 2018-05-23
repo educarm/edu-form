@@ -16,7 +16,7 @@
 				<form class="formedu" role="form" novalidate autocomplete="off" name="{{options.formMetaData.name}}" id="{{options.formMetaData.id}}"><div ng-transclude></div>
 					<div ng-if="options.formMetaData.tabsShow">
 					<tabset>
-						<tab heading="{{tab.tabname}}" ng-repeat="tab in options.formFields.tabs" active="tab.active">
+						<tab heading="{{tab.tabname}}" ng-repeat="tab in options.formFields.tabs" ng-if="tab.show!=false" active="tab.active">
 							<fieldset ng-if="options.formMetaData.fieldSetShow" ng-repeat="fieldset in tab.fieldSets">
 								<legend class="scheduler-border">{{fieldset.fieldSetName}}</legend>
 								<div ng-repeat="field in fieldset.fields">
