@@ -158,7 +158,7 @@ app.controller('appController', ['$scope','$http', function ($scope,$http) {
 							  }
 							]
 		},
-		buttonsUser:[
+		formButtonsUser:[
 			{ 
 				disabled:false,
 				state:'default',
