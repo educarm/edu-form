@@ -42,9 +42,19 @@
 						   </div>
 					</div>
 
-					<div class="well form-actions " ng-show="options.formMetaData.buttonsShow " style="text-align: right"> 
-						<button  ng-if="options.formMetaData.showButtonSave"  ng-click="save()"  ng-disabled="{{options.formMetaData.name+'.$invalid'}}" class="btn btn-primary">{{options.snippets.formButtonContinue||'Continuar'}}</button> 
-						<button  ng-if="options.formMetaData.showButtonCancel" ng-click="cancel()" class="btn">{{options.snippets.formButtonCancel||'Cancelar'}}</button>
+					<div class="well form-actions " ng-show="options.formMetaData.buttonsShow " style="height:70px"> 
+						<!-- buttons user -->  
+						<span class="pull-left">						
+							<button ng-repeat="button in options.buttonsUser" ng-click="button.onClick()" class="btn btn-{{button.state}}"  ng-disabled="button.disabled" style="margin-right:5px">
+								<i ng-if="button.glyphicon.length>0" class="glyphicon glyphicon-{{button.glyphicon}}" title="{{button.label}}"></i>
+								<img ng-if="button.iconPath.length>0" ng-src="data:image/png;base64,{{button.iconPath}}" alt="{{button.label}}"/>{{button.label}}
+							</button>
+						</span>
+						<!--             -->			  
+						<span class="pull-right">
+							<button  ng-if="options.formMetaData.showButtonSave"  ng-click="save()"  ng-disabled="{{options.formMetaData.name+'.$invalid'}}" class="btn btn-primary">{{options.snippets.formButtonContinue||'Continuar'}}</button> 
+							<button  ng-if="options.formMetaData.showButtonCancel" ng-click="cancel()" class="btn">{{options.snippets.formButtonCancel||'Cancelar'}}</button>
+						</span>
 					</div> 
 						
 				</form>
