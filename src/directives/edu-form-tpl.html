@@ -12,7 +12,8 @@
 					</div>
 				</div>
 			</div>
-			<div class="panel-body" >			
+			<div class="panel-body" >	
+		
 				<form class="formedu" role="form" novalidate autocomplete="off" name="{{options.formMetaData.name}}" id="{{options.formMetaData.id}}"><div ng-transclude></div>
 					<div ng-if="options.formMetaData.tabsShow">
 					<tabset>
@@ -42,9 +43,9 @@
 						   </div>
 					</div>
 
-					<div class="well form-actions " ng-show="options.formMetaData.buttonsShow " style="height:70px"> 
-						<!-- buttons user -->  
-						<span class="pull-left">						
+					<div class="well form-actions " ng-show="options.formMetaData.buttonsShow "  > 
+						<!-- buttons user -->  	
+						<span>						
 							<button ng-repeat="button in options.formButtonsUser" ng-click="button.onClick()" class="btn btn-{{button.state}}"  ng-disabled="button.disabled" style="margin-right:5px">
 								<i ng-if="button.glyphicon.length>0" class="glyphicon glyphicon-{{button.glyphicon}}" title="{{button.label}}"></i>
 								<img ng-if="button.iconPath.length>0" ng-src="data:image/png;base64,{{button.iconPath}}" alt="{{button.label}}"/>{{button.label}}
